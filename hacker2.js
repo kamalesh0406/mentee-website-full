@@ -131,7 +131,7 @@ function box(value){
 			edit.addEventListener("click",function(){editname(edit.getAttribute("id"));})
 			delete1.addEventListener("click",function(){
 				var myNode1 = document.getElementById("box");
-	    	while (myNode1.firstChild) {
+	    			while (myNode1.firstChild) {
     			myNode1.removeChild(myNode1.firstChild);}
     			var id = this.getAttribute("id");
     			var element = document.getElementsByClassName(id);
@@ -145,7 +145,7 @@ function box(value){
     				}
     			}
     			mentee.splice(i,i+1);
-    			localStorage.setItem("mentees",mentee);
+    			localStorage.setItem("mentees",JSON.stringify(mentee));
     			noofmentee--;
     			localStorage.setItem("count",noofmentee);
 			})
