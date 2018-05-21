@@ -222,8 +222,8 @@ function addMentee(){
 	colorassigner(rating,name);
 }
 function sortlist(){
-	ratinglist.sort(function(a, b) {
-  	return a - b;});
+	mentee.sort(function(a, b) {
+  	return a.rating - b.rating;});
 
 	var myNode = document.getElementById("box");
 	while (myNode.firstChild) {
@@ -238,19 +238,11 @@ function sortlist(){
     	myNode.removeChild(myNode.firstChild);
 	}
 	var i=0;var j=0;
-	for (i=0;i<ratinglist.length;i++){
-		for(j=0;j<noofmentee;j++){
-			if(mentee[j].rating==ratinglist[i]){
-				var name = mentee[j].nameof;
-				
-				listcreator(name);
 
-				
-
-			}
-		}
-
+	for(j=0;j<noofmentee;j++){
+		listcreator(mentee[j].nameof);
 	}
+	localStorage.setItem('mentees',JSON.stringify(mentee));
 
 
 
